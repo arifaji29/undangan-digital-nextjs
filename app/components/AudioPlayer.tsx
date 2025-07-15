@@ -7,8 +7,8 @@ export interface AudioPlayerHandle {
   pauseMusic: () => void;
 }
 
-// Komentar di bawah ini akan menonaktifkan aturan ESlint yang menyebabkan masalah
-// eslint-disable-next-line @typescript-eslint/ban-types
+// GANTI KOMENTAR DISABLE DENGAN NAMA ATURAN YANG BENAR
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 const AudioPlayer = forwardRef<AudioPlayerHandle, {}>((_props, ref) => {
   const audioRef = useRef<HTMLAudioElement>(null);
 
