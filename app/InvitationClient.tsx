@@ -1,4 +1,6 @@
-'use client'; 
+// app/InvitationClient.tsx
+
+'use client'; // WAJIB: Tandai sebagai Client Component
 
 import { useState, useRef } from 'react';
 
@@ -13,13 +15,13 @@ import PhotoGallery from './components/Gallery';
 import DigitalGift from './components/DigitalGift';
 import AudioPlayer, { AudioPlayerHandle } from './components/AudioPlayer';
 
-// HAPUS 'async' DARI SINI
+// Komponen ini menerima 'guestName' sebagai prop string biasa
 export default function InvitationClient({ guestName }: { guestName: string }) {
   // Semua state dan ref berada di sini
   const [isOpen, setIsOpen] = useState(false);
   const audioPlayerRef = useRef<AudioPlayerHandle>(null);
 
-  // Fungsi ini tidak perlu async juga
+  // Fungsi untuk menangani interaksi pengguna
   const handleOpenInvitation = () => {
     setIsOpen(true);
     audioPlayerRef.current?.playMusic();
@@ -30,11 +32,13 @@ export default function InvitationClient({ guestName }: { guestName: string }) {
       <AudioPlayer ref={audioPlayerRef} />
 
       {!isOpen && (
+        // Cover menerima guestName dan fungsi handle
         <Cover guestName={guestName} onOpen={handleOpenInvitation} />
       )}
 
       {isOpen && (
         <main className="bg-gray-50 font-sans">
+          {/* Hero juga menerima guestName */}
           <Hero guestName={guestName} />
           <WeddingCountdown />
           <EventDetails />
