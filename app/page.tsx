@@ -14,7 +14,7 @@ function Inner() {
 
 export default function HomePage() {
   return (
-    <Suspense fallback={<div>Loading undangan...</div>}>
+    <Suspense fallback={<div>Loading undangan..</div>}>
       <Inner />
     </Suspense>
   );
