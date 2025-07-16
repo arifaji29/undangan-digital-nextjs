@@ -7,12 +7,12 @@ const bankAccounts = [
   {
     bankName: 'Bank Central Asia (BCA)',
     accountNumber: '1234567890',
-    accountHolder: 'Imam',
+    accountHolder: 'Tono',
   },
   {
     bankName: 'Bank Mandiri',
     accountNumber: '0987654321',
-    accountHolder: 'Ratna',
+    accountHolder: 'Tini',
   },
 ];
 
@@ -47,11 +47,9 @@ export default function DigitalGift() {
           {/* Kartu untuk Kirim Hadiah Fisik */}
           <div data-aos="fade-up" data-aos-delay="300" className="bg-white p-6 rounded-lg shadow-lg">
             <h3 className="text-xl font-bold mb-3 text-stone-700">Kirim Hadiah</h3>
-            <p className="font-semibold">Imam & Ratna</p>
+            <p className="font-semibold">Tono & Tini</p>
             <p className="text-stone-600">
-              Jl. Kebahagiaan No. 25, RT 01/RW 02, <br />
-              Kelurahan Sejahtera, Kecamatan Sentosa, <br />
-              Kota Bahagia, 12345
+              Jl. Karya Budiman Kelurahan Condet No 223 RT 12 RW 06 Kampung Tengah Kramat Jati Jakarta Timur
             </p>
           </div>
 
