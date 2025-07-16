@@ -1,5 +1,5 @@
-// app/page.tsx
-'use client'; // Wajib agar bisa pakai useSearchParams
+'use client'; // Agar bisa pakai useSearchParams
+export const dynamic = 'force-dynamic'; // Penting agar tidak prerender
 
 import { useSearchParams } from 'next/navigation';
 import InvitationClient from './InvitationClient';
