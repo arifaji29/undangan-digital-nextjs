@@ -1,12 +1,21 @@
-'use client'; // Agar bisa pakai useSearchParams
-export const dynamic = 'force-dynamic'; // Penting agar tidak prerender
+'use client';
+export const dynamic = 'force-dynamic';
 
-import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 import InvitationClient from './InvitationClient';
+import { useSearchParams } from 'next/navigation';
 
-export default function HomePage() {
+function Inner() {
   const searchParams = useSearchParams();
   const guestName = searchParams.get('to') || 'Tamu Undangan';
 
   return <InvitationClient guestName={guestName} />;
+}
+
+export default function HomePage() {
+  return (
+    <Suspense fallback={<div>Loading undangan...</div>}>
+      <Inner />
+    </Suspense>
+  );
 }
