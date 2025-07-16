@@ -1,21 +1,13 @@
-'use client';
-export const dynamic = 'force-dynamic';
-
+// app/page.tsx
 import { Suspense } from 'react';
-import InvitationClient from './InvitationClient';
-import { useSearchParams } from 'next/navigation';
+import InvitationWrapper from './components/InvitationWrapper';
 
-function Inner() {
-  const searchParams = useSearchParams();
-  const guestName = searchParams.get('to') || 'Tamu Undangan';
-
-  return <InvitationClient guestName={guestName} />;
-}
+export const dynamic = 'force-dynamic';
 
 export default function HomePage() {
   return (
-    <Suspense fallback={<div>Loading undangan...</div>}>
-      <Inner />
+    <Suspense fallback={<div>Memuat undangan...</div>}>
+      <InvitationWrapper />
     </Suspense>
   );
 }
