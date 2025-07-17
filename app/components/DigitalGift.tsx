@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 
-// Data untuk rekening bank, bisa Anda tambah atau kurangi
 const bankAccounts = [
   {
     bankName: 'Bank Central Asia (BCA)',
@@ -17,15 +17,11 @@ const bankAccounts = [
 ];
 
 export default function DigitalGift() {
-  // State untuk melacak nomor rekening mana yang baru saja disalin
   const [copied, setCopied] = useState('');
 
-  // Fungsi untuk menangani aksi salin ke clipboard
   const handleCopy = (text: string) => {
     navigator.clipboard.writeText(text).then(() => {
-      // Jika berhasil, simpan nomor yang disalin ke state
       setCopied(text);
-      // Setelah 2 detik, reset state agar tombol kembali seperti semula
       setTimeout(() => {
         setCopied('');
       }, 2000);
@@ -36,15 +32,28 @@ export default function DigitalGift() {
   };
 
   return (
-    <section data-aos="fade-up" className="bg-stone-100 py-16 px-4">
-      <div className="max-w-4xl mx-auto text-center">
+    <section id="gift" data-aos="fade-up" className="relative py-16 px-4 overflow-hidden">
+      {/* Background dan overlay */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/hero-image.jpg"
+          alt="Background Gift"
+          layout="fill"
+          objectFit="cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-white/50 backdrop-blur-sm" />
+      </div>
+
+      {/* Konten utama */}
+      <div className="relative z-10 max-w-4xl mx-auto text-center">
         <h2 className="text-4xl font-serif mb-4 text-stone-800">Wedding Gift</h2>
         <p className="text-stone-600 mb-10 max-w-2xl mx-auto">
           Doa restu Anda adalah hadiah terindah bagi kami. Namun, jika Anda ingin memberikan tanda kasih, kami dengan senang hati akan menerimanya.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-          {/* Kartu untuk Kirim Hadiah Fisik */}
+          {/* Kartu Hadiah Fisik */}
           <div data-aos="fade-up" data-aos-delay="300" className="bg-white p-6 rounded-lg shadow-lg">
             <h3 className="text-xl font-bold mb-3 text-stone-700">Kirim Hadiah</h3>
             <p className="font-semibold">Tono & Tini</p>
@@ -53,7 +62,7 @@ export default function DigitalGift() {
             </p>
           </div>
 
-          {/* Kartu untuk Amplop Digital */}
+          {/* Kartu Amplop Digital */}
           <div data-aos="fade-up" data-aos-delay="600" className="bg-white p-6 rounded-lg shadow-lg">
             <h3 className="text-xl font-bold mb-3 text-stone-700">Amplop Digital</h3>
             <div className="space-y-4">

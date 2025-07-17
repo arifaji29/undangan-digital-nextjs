@@ -1,9 +1,10 @@
 'use client';
 
 import Image from 'next/image';
-import { weddingDate } from '../constants'; // Import tanggal pernikahan
+import { weddingDate } from '../constants';
+import { FaInstagram } from 'react-icons/fa';
 
-// Format tanggal dan jam dalam Bahasa Indonesia
+// Format tanggal dan jam
 const formattedDate = weddingDate.toLocaleDateString('id-ID', {
   weekday: 'long',
   year: 'numeric',
@@ -20,10 +21,11 @@ const formattedTime = weddingDate.toLocaleTimeString('id-ID', {
 export default function Hero({ guestName }: { guestName: string }) {
   return (
     <section
+      id="hero"
       data-aos="fade-up"
       className="min-h-screen relative flex items-center justify-center text-center text-stone-700 p-4"
     >
-      {/* Latar Belakang Gambar */}
+      {/* Background */}
       <div className="absolute inset-0 overflow-hidden">
         <Image
           src="/images/hero-image.jpg"
@@ -32,48 +34,73 @@ export default function Hero({ guestName }: { guestName: string }) {
           objectFit="cover"
           priority
         />
+         {/* Semi-transparent overlay */}
+      <div className="absolute inset-0 bg-white/50" />
       </div>
 
-      {/* Konten Teks */}
+      {/* Konten */}
       <div data-aos="fade-up" data-aos-delay="400" className="relative z-10">
         <div className="mb-8">
           <p className="text-lg font-light">Kepada Yth. Bapak/Ibu/Saudara/i</p>
           <p className="text-3xl font-bold mt-2">{guestName.replace(/%20/g, ' ')}</p>
         </div>
 
-        <h2
-          data-aos="fade-up"
-          data-aos-delay="500"
-          className="text-xl font-light tracking-wider mb-4"
-          style={{ fontFamily: 'sans-serif' }}
-        >
-          PERNIKAHAN
-        </h2>
-        <h1
-          data-aos="fade-up"
-          data-aos-delay="600"
-          className="text-6xl md:text-8xl mb-6"
-          style={{ fontFamily: 'serif' }}
-        >
-          Tono & Tini
-        </h1>
+        <h2 className="text-xl font-light tracking-wider mb-4">PERNIKAHAN</h2>
+        <h1 className="text-6xl md:text-8xl mb-6 font-serif">Tono & Tini</h1>
+         {/* Foto Mempelai & Instagram */}
+        <div className="flex justify-center items-center gap-8 flex-wrap">
+          {/* Mempelai Pria */}
+          <div className="flex flex-col items-center">
+            <Image
+              src="/images/tono.jpg"
+              alt="Tono"
+              width={100}
+              height={100}
+              className="rounded-full object-cover shadow-md"
+            />
+            <a
+              href="https://instagram.com/tono_username"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 text-white bg-black/50 px-3 py-1 mt-2 rounded-md hover:bg-black transition text-sm"
+            >
+              <FaInstagram />
+              <span>@tono_321</span>
+            </a>
+          </div>
+
+          {/* Mempelai Wanita */}
+          <div className="flex flex-col items-center">
+            <Image
+              src="/images/tini.jpg"
+              alt="Tini"
+              width={100}
+              height={100}
+              className="rounded-full object-cover shadow-md"
+            />
+            <a
+              href="https://instagram.com/tini_username"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 text-white bg-black/50 px-3 py-1 mt-2 rounded-md hover:bg-black transition text-sm"
+            >
+              <FaInstagram />
+              <span>@tini_123</span>
+            </a>
+          </div>
+        </div>
+        <br />
+
         <p
           data-aos="fade-up"
           data-aos-delay="700"
-          className="text-lg mb-2"
+          className="text-lg mb-4"
         >
           Dengan segala hormat mengundang Anda pada acara pernikahan kami yang akan dilaksanakan pada:
         </p>
-        <div
-          data-aos="fade-up"
-          data-aos-delay="800"
-          className="mt-4 flex justify-center"
-        >
-          <div className="bg-white/60 backdrop-blur-sm border border-white/30 rounded-lg px-6 py-3 shadow-md">
-            <p className="text-base font-bold text-stone-800">{formattedDate}</p>
-            <p className="text-base font-bold text-stone-800">Pukul {formattedTime} WIB</p>
-          </div>
-        </div>
+
+        <p className="text-lg font-medium text-stone-700">{formattedDate}</p>
+        <p className="text-lg font-light text-stone-700">Pukul {formattedTime} WIB</p>
       </div>
     </section>
   );

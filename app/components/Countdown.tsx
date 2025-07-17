@@ -39,7 +39,7 @@ const renderer: CountdownRendererFn = ({
 
 export default function WeddingCountdown() {
   return (
-    <section className="bg-stone-700 py-12">
+    <section id="countdown" className="bg-stone-700 py-12">
       <Countdown date={weddingDate} renderer={renderer} />
     </section>
   );

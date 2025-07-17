@@ -14,6 +14,9 @@ import Guestbook from './components/Guestbook';
 import PhotoGallery from './components/Gallery';
 import DigitalGift from './components/DigitalGift';
 import AudioPlayer, { AudioPlayerHandle } from './components/AudioPlayer';
+import StickyNav from './components/StickyNav';
+import Footer from './components/Footer';
+
 
 // Komponen ini menerima 'guestName' sebagai prop string biasa
 export default function InvitationClient({ guestName }: { guestName: string }) {
@@ -46,8 +49,11 @@ export default function InvitationClient({ guestName }: { guestName: string }) {
           <DigitalGift />
           <RSVPForm />
           <Guestbook />
+          <Footer />
         </main>
       )}
+      <StickyNav />
     </>
   );
 }
+

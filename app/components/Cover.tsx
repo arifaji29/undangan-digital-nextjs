@@ -1,36 +1,40 @@
-// Terima guestName dan fungsi onOpen sebagai props
 interface CoverProps {
   guestName: string;
-  onOpen: () => void; // Fungsi yang akan dipanggil saat tombol diklik
+  onOpen: () => void;
 }
 
 export default function Cover({ guestName, onOpen }: CoverProps) {
   return (
-    <div
-      className="fixed inset-0 flex flex-col justify-center items-center text-center z-50 bg-cover bg-center"
-      // Mengatur gambar latar belakang dari folder public
-      style={{ backgroundImage: "url('/images/cover-bg.png')" }}
-    >
-      {/* Karena latar belakang sekarang putih, kita ganti warna teks menjadi gelap.
-        Contoh: text-stone-800 atau text-gray-700.
-      */}
-      <div className="text-stone-800">
-        <h2 className="text-xl font-light tracking-wider mb-4">THE WEDDING OF</h2>
-        <h1 className="text-6xl md:text-8xl font-serif mb-12">Tono & Tini</h1>
+    <div className="fixed inset-0 z-50">
+      {/* Background image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center h-full w-full"
+        style={{ backgroundImage: "url('/images/cover-bg.png')" }}
+      />
 
-        <div className="mb-8">
+      {/* Semi-transparent overlay */}
+      <div className="absolute inset-0 bg-white/50" />
+
+      {/* Main content */}
+      <div className="relative z-10 flex flex-col justify-center items-center text-center h-full text-stone-800 drop-shadow-lg px-4 pt-20">
+        <div className="mb-40 -mt-55"> {/* Geser lebih ke atas */}
+          <h2 className="text-xl font-light tracking-wider mb-3">THE WEDDING OF</h2>
+          <h1 className="text-6xl md:text-8xl font-serif mb-8">Tono & Tini</h1> {/* Tidak terlalu bold */}
+        </div>
+
+        <div className="mb-10">
           <p className="text-lg font-light">Kepada Yth. Bapak/Ibu/Saudara/i</p>
-          <p className="text-3xl font-bold mt-2">{guestName.replace(/%20/g, ' ')}</p>
+          <p className="text-3xl font-semibold mt-2">{guestName.replace(/%20/g, ' ')}</p>
         </div>
 
         <button
           onClick={onOpen}
-          // Ubah style tombol agar kontras dengan latar belakang putih
-          className="bg-stone-700 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-stone-800 hover:scale-105 transition-transform"
+          className="relative group bg-stone-800 text-white font-medium py-3 px-8 rounded-full shadow-lg hover:bg-stone-900 hover:scale-105 transition-transform"
         >
           ✉ Buka Undangan
-          {/* Efek kilau */}
-          <span className="absolute top-0 left-[-75%] w-1/2 h-full bg-white opacity-20 transform skew-x-[-20deg] group-hover:animate-shimmer" />
+          <span className="absolute inset-0 w-full h-full rounded-full overflow-hidden">
+            <span className="absolute top-0 left-[-100%] w-full h-full bg-white opacity-10 transform skew-x-[-20deg] group-hover:animate-shimmer" />
+          </span>
         </button>
       </div>
     </div>

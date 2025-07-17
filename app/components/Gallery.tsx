@@ -12,7 +12,7 @@ const imageFiles = [
 
 export default function PhotoGallery() {
   return (
-    <section className="bg-stone-100 py-16 px-4">
+    <section id="gallery" className=" bg-white py-16 px-4">
       <div className="max-w-5xl mx-auto text-center">
         <h2 data-aos="fade-up" className="text-4xl font-serif mb-8 text-stone-800">Momen Bahagia Kami</h2>
         {/* Grid untuk galeri foto */}
