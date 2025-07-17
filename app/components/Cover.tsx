@@ -1,3 +1,4 @@
+import { MailOpen } from 'lucide-react';
 interface CoverProps {
   guestName: string;
   onOpen: () => void;
@@ -31,7 +32,10 @@ export default function Cover({ guestName, onOpen }: CoverProps) {
           onClick={onOpen}
           className="relative group bg-stone-800 text-white font-medium py-3 px-8 rounded-full shadow-lg hover:bg-stone-900 hover:scale-105 transition-transform"
         >
-          ✉ Buka Undangan
+          <div className="flex items-center justify-center gap-2 z-10 relative">
+            <MailOpen size={20} />
+            <span>Buka Undangan</span>
+          </div>
           <span className="absolute inset-0 w-full h-full rounded-full overflow-hidden">
             <span className="absolute top-0 left-[-100%] w-full h-full bg-white opacity-10 transform skew-x-[-20deg] group-hover:animate-shimmer" />
           </span>
