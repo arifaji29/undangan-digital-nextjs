@@ -45,8 +45,10 @@ export default function Hero({ guestName }: { guestName: string }) {
           <p className="text-3xl font-bold mt-2">{guestName.replace(/%20/g, ' ')}</p>
         </div>
 
-        <h2 className="text-xl font-light tracking-wider mb-4">PERNIKAHAN</h2>
-        <h1 className="text-6xl md:text-8xl mb-6 font-serif">Tono & Tini</h1>
+        <h2 className="text-3xl mb-3"
+            style={{ fontFamily: 'tentangnanti' }}>Pernikahan</h2>
+        <h1 className="text-7xl mb-3"
+            style={{ fontFamily: 'tentangnanti' }}>Tono & Tini</h1>
          {/* Foto Mempelai & Instagram */}
         <div className="flex justify-center items-center gap-8 flex-wrap">
           {/* Mempelai Pria */}

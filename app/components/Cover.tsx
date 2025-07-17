@@ -1,4 +1,5 @@
 import { MailOpen } from 'lucide-react';
+
 interface CoverProps {
   guestName: string;
   onOpen: () => void;
@@ -19,8 +20,14 @@ export default function Cover({ guestName, onOpen }: CoverProps) {
       {/* Main content */}
       <div className="relative z-10 flex flex-col justify-center items-center text-center h-full text-stone-800 drop-shadow-lg px-4 pt-20">
         <div className="mb-40 -mt-55"> {/* Geser lebih ke atas */}
-          <h2 className="text-xl font-light tracking-wider mb-3">THE WEDDING OF</h2>
-          <h1 className="text-6xl md:text-8xl font-serif mb-8">Tono & Tini</h1> {/* Tidak terlalu bold */}
+          <h2
+            className="text-2xl mb-3"
+            style={{ fontFamily: 'tentangnanti' }}
+          >
+            The Wedding Of
+          </h2>
+          <h1 className="text-7xl mb-3"
+            style={{ fontFamily: 'tentangnanti' }}>Tono & Tini</h1> {/* Tidak terlalu bold */}
         </div>
 
         <div className="mb-10">

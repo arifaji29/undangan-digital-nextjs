@@ -40,3 +40,25 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+@font-face {
+  font-family: 'Photograph Signature';
+  src: url('/fonts/Photograph Signature.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+  font-family: 'Kugile';
+  src: url('/fonts/Kugile_Demo.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+  font-family: 'crusignature';
+  src: url('/fonts/Crustaceans-SignatureDEMO-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+
+  font-family: 'tentangnanti';
+  src: url('/fonts/TNanti-Demo.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
