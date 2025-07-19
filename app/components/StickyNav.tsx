@@ -50,12 +50,14 @@ export default function StickyNav() {
       className={`fixed bottom-20 left-1/2 -translate-x-1/2 bg-stone-600 text-white shadow-lg rounded-full px-4 py-2 flex gap-3 z-50 transition-all duration-500 backdrop-blur-sm ${
         visible ? 'opacity-100' : 'opacity-0 pointer-events-none'
       } max-w-full overflow-x-auto`}
+      role="navigation"
+      aria-label="Navigasi bagian halaman"
     >
       {sections.map((section) => (
         <NavItem
           key={section.id}
           href={`#${section.id}`}
-          icon={<section.icon size={20} aria-hidden="true" />}
+          Icon={section.icon}
           label={section.label}
           active={activeSection === section.id}
         />
@@ -66,12 +68,12 @@ export default function StickyNav() {
 
 function NavItem({
   href,
-  icon,
+  Icon,
   label,
   active,
 }: {
   href: string;
-  icon: React.ReactNode;
+  Icon: React.ElementType;
   label: string;
   active: boolean;
 }) {
@@ -83,7 +85,7 @@ function NavItem({
       } hover:text-yellow-300`}
       aria-label={label}
     >
-      {icon}
+      <Icon size={20} aria-hidden="true" />
       <span className="mt-1">{label}</span>
     </a>
   );
