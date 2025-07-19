@@ -34,8 +34,42 @@ export default function Hero({ guestName }: { guestName: string }) {
           objectFit="cover"
           priority
         />
-         {/* Semi-transparent overlay */}
-      <div className="absolute inset-0 bg-white/50" />
+        {/* Semi-transparent overlay */}
+        <div className="absolute inset-0 bg-white/50" />
+      </div>
+
+      {/* Bunga Dekoratif Atas Kiri */}
+      <div
+        className="absolute top-0 left-0 w-35 h-35 animate-[float-rotate_6s_ease-in-out_infinite] z-10"
+        style={{
+          transform: 'translate(-90%, -90%)', // agar lebih ke pojok luar
+        }}
+        data-aos="fade-down"
+        data-aos-delay="1000"
+        data-aos-duration="1200"
+      >
+        <img
+          src="/images/flower1.png"
+          alt="Bunga"
+          className="w-full h-full object-contain"
+        />
+      </div>
+
+      {/* Bunga Dekoratif Bawah Kanan */}
+      <div
+        className="absolute bottom-0 right-0 w-35 h-35 animate-[float_6s_ease-in-out_infinite] z-10"
+        style={{
+         transform: 'translate(-90%, -90%)', // agar tidak masuk terlalu ke dalam
+        }}
+        data-aos="fade-up"
+        data-aos-delay="1000"
+        data-aos-duration="1200"
+      >
+        <img
+          src="/images/flower2.png"
+          alt="Bunga"
+          className="w-full h-full object-contain"
+        />
       </div>
 
       {/* Konten */}
@@ -46,10 +80,10 @@ export default function Hero({ guestName }: { guestName: string }) {
         </div>
 
         <h2 className="text-3xl mb-3"
-            style={{ fontFamily: 'tentangnanti' }}>Pernikahan</h2>
+          style={{ fontFamily: 'tentangnanti' }}>Pernikahan</h2>
         <h1 className="text-7xl mb-3"
-            style={{ fontFamily: 'tentangnanti' }}>Tono & Tini</h1>
-         {/* Foto Mempelai & Instagram */}
+          style={{ fontFamily: 'tentangnanti' }}>Tono & Tini</h1>
+        {/* Foto Mempelai & Instagram */}
         <div className="flex justify-center items-center gap-8 flex-wrap">
           {/* Mempelai Pria */}
           <div className="flex flex-col items-center">

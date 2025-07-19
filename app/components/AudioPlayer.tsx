@@ -1,31 +1,29 @@
 'use client';
 
-import { useRef, forwardRef, useImperativeHandle } from 'react';
+import { forwardRef, useImperativeHandle, useRef } from 'react';
 
-export interface AudioPlayerHandle {
+export type AudioPlayerHandle = {
   playMusic: () => void;
   pauseMusic: () => void;
-}
+};
 
-// GANTI KOMENTAR DISABLE DENGAN NAMA ATURAN YANG BENAR
-// eslint-disable-next-line @typescript-eslint/no-empty-object-type
-const AudioPlayer = forwardRef<AudioPlayerHandle, {}>((_props, ref) => {
+const AudioPlayer = forwardRef<AudioPlayerHandle, {}>((_, ref) => {
   const audioRef = useRef<HTMLAudioElement>(null);
 
   useImperativeHandle(ref, () => ({
     playMusic() {
-      audioRef.current?.play().catch(error => console.error("Gagal memutar audio:", error));
+      audioRef.current?.play();
     },
     pauseMusic() {
       audioRef.current?.pause();
-    }
+    },
   }));
 
   return (
-    <audio ref={audioRef} src="/musik.mp3" loop />
+    <audio ref={audioRef} loop>
+      <source src="/musik.mp3" type="audio/mpeg" />
+    </audio>
   );
 });
-
-AudioPlayer.displayName = 'AudioPlayer';
 
 export default AudioPlayer;

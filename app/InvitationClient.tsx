@@ -1,10 +1,7 @@
-// app/InvitationClient.tsx
-
-'use client'; // WAJIB: Tandai sebagai Client Component
+'use client';
 
 import { useState, useRef } from 'react';
 
-// Impor semua komponen Anda
 import Cover from './components/Cover';
 import Hero from './components/Hero';
 import WeddingCountdown from './components/Countdown';
@@ -16,44 +13,40 @@ import DigitalGift from './components/DigitalGift';
 import AudioPlayer, { AudioPlayerHandle } from './components/AudioPlayer';
 import StickyNav from './components/StickyNav';
 import Footer from './components/Footer';
+import MusicControls from './components/MusicControls';
 
-
-// Komponen ini menerima 'guestName' sebagai prop string biasa
 export default function InvitationClient({ guestName }: { guestName: string }) {
-  // Semua state dan ref berada di sini
   const [isOpen, setIsOpen] = useState(false);
   const audioPlayerRef = useRef<AudioPlayerHandle>(null);
 
-  // Fungsi untuk menangani interaksi pengguna
   const handleOpenInvitation = () => {
     setIsOpen(true);
-    audioPlayerRef.current?.playMusic();
+    audioPlayerRef.current?.playMusic(); // auto-play setelah dibuka
   };
 
   return (
     <>
+      {/* ✅ AudioPlayer hanya dirender sekali */}
       <AudioPlayer ref={audioPlayerRef} />
 
-      {!isOpen && (
-        // Cover menerima guestName dan fungsi handle
+      {!isOpen ? (
         <Cover guestName={guestName} onOpen={handleOpenInvitation} />
+      ) : (
+        <>
+          <main className="bg-gray-50 font-sans">
+            <Hero guestName={guestName} />
+            <WeddingCountdown />
+            <EventDetails />
+            <PhotoGallery />
+            <DigitalGift />
+            <RSVPForm />
+            <Guestbook />
+            <Footer />
+          </main>
+          <MusicControls audioRef={audioPlayerRef} />
+          <StickyNav />
+        </>
       )}
-
-      {isOpen && (
-        <main className="bg-gray-50 font-sans">
-          {/* Hero juga menerima guestName */}
-          <Hero guestName={guestName} />
-          <WeddingCountdown />
-          <EventDetails />
-          <PhotoGallery />
-          <DigitalGift />
-          <RSVPForm />
-          <Guestbook />
-          <Footer />
-        </main>
-      )}
-      <StickyNav />
     </>
   );
 }
-

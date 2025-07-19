@@ -8,7 +8,7 @@ export default function AOSInitializer() {
   useEffect(() => {
     AOS.init({
       // Pengaturan global AOS:
-      duration: 800, // Durasi animasi dalam milidetik
+      duration: 1200, // Durasi animasi dalam milidetik
       once: true,    // Apakah animasi hanya terjadi sekali saat scroll
     });
   }, []); // useEffect kosong berarti ini hanya akan berjalan sekali saat komponen dimuat
