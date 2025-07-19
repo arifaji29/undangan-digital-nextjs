@@ -1,23 +1,23 @@
 'use client';
 
 import {
-  Home,
-  Calendar,
-  Image,
-  Gift,
-  PencilLine,
-  Users,
+  Home as HomeIcon,
+  Calendar as CalendarIcon,
+  Image as ImageIcon,
+  Gift as GiftIcon,
+  PencilLine as PencilIcon,
+  Users as UsersIcon,
 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import React from 'react';
 
 const sections = [
-  { id: 'hero', icon: <Home size={20} />, label: 'Beranda' },
-  { id: 'countdown', icon: <Calendar size={20} />, label: 'Tanggal' },
-  { id: 'event', icon: <Users size={20} />, label: 'Acara' },
-  { id: 'gallery', icon: <Image size={20} />, label: 'Galeri' },
-  { id: 'gift', icon: <Gift size={20} />, label: 'Hadiah' },
-  { id: 'rsvp', icon: <PencilLine size={20} />, label: 'RSVP' },
+  { id: 'hero', icon: HomeIcon, label: 'Beranda' },
+  { id: 'countdown', icon: CalendarIcon, label: 'Tanggal' },
+  { id: 'event', icon: UsersIcon, label: 'Acara' },
+  { id: 'gallery', icon: ImageIcon, label: 'Galeri' },
+  { id: 'gift', icon: GiftIcon, label: 'Hadiah' },
+  { id: 'rsvp', icon: PencilIcon, label: 'RSVP' },
 ];
 
 export default function StickyNav() {
@@ -32,7 +32,7 @@ export default function StickyNav() {
       for (const section of sections) {
         const el = document.getElementById(section.id);
         if (el) {
-          const offsetTop = el.offsetTop - 150; // sesuaikan jika butuh margin
+          const offsetTop = el.offsetTop - 150;
           if (window.scrollY >= offsetTop) {
             current = section.id;
           }
@@ -55,7 +55,7 @@ export default function StickyNav() {
         <NavItem
           key={section.id}
           href={`#${section.id}`}
-          icon={section.icon}
+          icon={<section.icon size={20} aria-hidden="true" />}
           label={section.label}
           active={activeSection === section.id}
         />
@@ -81,6 +81,7 @@ function NavItem({
       className={`flex flex-col items-center justify-center transition-colors duration-200 text-xs ${
         active ? 'text-yellow-300' : 'text-white'
       } hover:text-yellow-300`}
+      aria-label={label}
     >
       {icon}
       <span className="mt-1">{label}</span>
