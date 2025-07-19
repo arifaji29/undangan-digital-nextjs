@@ -100,7 +100,6 @@ export default function Hero({ guestName }: { guestName: string }) {
         >
           Dengan segala hormat mengundang Anda pada acara pernikahan kami yang akan dilaksanakan pada:
         </p>
-
         <p className="text-lg font-medium text-stone-700">{formattedDate}</p>
         <p className="text-lg font-light text-stone-700">Pukul {formattedTime} WIB</p>
       </div>

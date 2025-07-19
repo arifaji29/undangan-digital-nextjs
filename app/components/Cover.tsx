@@ -41,7 +41,7 @@ export default function Cover({ guestName, onOpen }: CoverProps) {
         >
           <div className="flex items-center justify-center gap-2 z-10 relative">
             <MailOpen size={20} />
-            <span>Buka Undangan</span>
+            <span>Save The Date</span>
           </div>
           <span className="absolute inset-0 w-full h-full rounded-full overflow-hidden">
             <span className="absolute top-0 left-[-100%] w-full h-full bg-white opacity-10 transform skew-x-[-20deg] group-hover:animate-shimmer" />
