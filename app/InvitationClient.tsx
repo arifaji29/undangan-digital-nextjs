@@ -53,7 +53,7 @@ const scrollToHero = () => {
 
         {/* Hero Section */}
         <div ref={heroRef}>
-          <Hero guestName={guestName} />
+          <Hero  />
         </div>
 
         <WeddingCountdown />

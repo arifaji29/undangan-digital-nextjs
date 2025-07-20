@@ -17,7 +17,7 @@ const formattedTime = weddingDate.toLocaleTimeString('id-ID', {
   hour12: false,
 });
 
-export default function Hero({ guestName }: { guestName: string }) {
+export default function Hero() {
   return (
     <section
       id="hero"
@@ -74,10 +74,11 @@ export default function Hero({ guestName }: { guestName: string }) {
       <div data-aos="fade-up" data-aos-delay="400" className="relative z-10">
         <div>
           <p className="text-4xl mb-3" style={{ fontFamily: 'signature' }}>
-            Assalamu'alaikum Wr. Wb.
+            Assalamu&#39;alaikum Wr. Wb.
           </p>
-          <p className="text-base mb-3" style={{ fontFamily: 'SourgummyLight' }}>Tanpa mengurangi rasa hormat. Kami mengundang Bapak/Ibu/Saudara/i serta kerabat sekalian untuk menghadiri acara pernikahan kami :</p>
-
+          <p className="text-base mb-3" style={{ fontFamily: 'SourgummyLight' }}>
+            Tanpa mengurangi rasa hormat. Kami mengundang Bapak/Ibu/Saudara/i serta kerabat sekalian untuk menghadiri acara pernikahan kami :
+          </p>
         </div>
 
         <h1 className="text-7xl mt-2 mb-3" style={{ fontFamily: 'tentangnanti' }}>
@@ -94,7 +95,8 @@ export default function Hero({ guestName }: { guestName: string }) {
               height={100}
               className="rounded-full object-cover shadow-md"
             />
-            <a style={{ fontFamily: 'SourgummyThin' }}
+            <a
+              style={{ fontFamily: 'SourgummyThin' }}
               href="https://instagram.com/tono_username"
               target="_blank"
               rel="noopener noreferrer"
@@ -114,7 +116,8 @@ export default function Hero({ guestName }: { guestName: string }) {
               height={100}
               className="rounded-full object-cover shadow-md"
             />
-            <a style={{ fontFamily: 'SourgummyThin' }}
+            <a
+              style={{ fontFamily: 'SourgummyThin' }}
               href="https://instagram.com/tini_username"
               target="_blank"
               rel="noopener noreferrer"
@@ -125,6 +128,7 @@ export default function Hero({ guestName }: { guestName: string }) {
             </a>
           </div>
         </div>
+
         <br />
 
         <p
