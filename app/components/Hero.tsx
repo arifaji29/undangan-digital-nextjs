@@ -22,7 +22,7 @@ export default function Hero({ guestName }: { guestName: string }) {
     <section
       id="hero"
       data-aos="fade-up"
-      className="relative h-screen flex items-center justify-center text-center text-stone-700 p-4 overflow-hidden"
+      className="relative h-screen flex items-center justify-center text-center text-stone-700 p-5 overflow-hidden"
     >
       {/* Background */}
       <div className="absolute inset-0 overflow-hidden">
@@ -72,17 +72,15 @@ export default function Hero({ guestName }: { guestName: string }) {
 
       {/* Konten */}
       <div data-aos="fade-up" data-aos-delay="400" className="relative z-10">
-        <div className="mb-8">
-          <p className="text-lg font-light">Kepada Yth. Bapak/Ibu/Saudara/i</p>
-          <p className="text-3xl font-bold mt-2">
-            {guestName.replace(/%20/g, ' ')}
+        <div>
+          <p className="text-4xl mb-3" style={{ fontFamily: 'signature' }}>
+            Assalamu'alaikum Wr. Wb.
           </p>
+          <p className="text-base mb-3" style={{ fontFamily: 'SourgummyLight' }}>Tanpa mengurangi rasa hormat. Kami mengundang Bapak/Ibu/Saudara/i serta kerabat sekalian untuk menghadiri acara pernikahan kami :</p>
+
         </div>
 
-        <h2 className="text-3xl mb-3" style={{ fontFamily: 'tentangnanti' }}>
-          Pernikahan
-        </h2>
-        <h1 className="text-7xl mb-3" style={{ fontFamily: 'tentangnanti' }}>
+        <h1 className="text-7xl mt-2 mb-3" style={{ fontFamily: 'tentangnanti' }}>
           Tono & Tini
         </h1>
 
@@ -96,7 +94,7 @@ export default function Hero({ guestName }: { guestName: string }) {
               height={100}
               className="rounded-full object-cover shadow-md"
             />
-            <a
+            <a style={{ fontFamily: 'SourgummyThin' }}
               href="https://instagram.com/tono_username"
               target="_blank"
               rel="noopener noreferrer"
@@ -116,7 +114,7 @@ export default function Hero({ guestName }: { guestName: string }) {
               height={100}
               className="rounded-full object-cover shadow-md"
             />
-            <a
+            <a style={{ fontFamily: 'SourgummyThin' }}
               href="https://instagram.com/tini_username"
               target="_blank"
               rel="noopener noreferrer"
@@ -132,12 +130,13 @@ export default function Hero({ guestName }: { guestName: string }) {
         <p
           data-aos="fade-up"
           data-aos-delay="700"
-          className="text-lg mb-4"
+          className="text-base mt-3 mb-2"
+          style={{ fontFamily: 'SourgummyLight' }}
         >
-          Dengan segala hormat mengundang Anda pada acara pernikahan kami yang akan dilaksanakan pada:
+          yang akan dilaksanakan pada:
         </p>
-        <p className="text-lg font-medium text-stone-700">{formattedDate}</p>
-        <p className="text-lg font-light text-stone-700">
+        <p className="text-xl text-stone-700" style={{ fontFamily: 'SourgummyMed' }}>{formattedDate}</p>
+        <p className="text-lg text-stone-700" style={{ fontFamily: 'SourgummyLight' }}>
           Pukul {formattedTime} WIB
         </p>
       </div>

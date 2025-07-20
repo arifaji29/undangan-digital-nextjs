@@ -54,9 +54,9 @@ export default function RSVPForm() {
 
   // Tampilan form jika belum submit
   return (
-    <section id="rsvp" className="max-w-2xl mx-auto p-8">
+    <section id="rsvp" className="max-w-2xl mx-auto p-8" style={{ fontFamily: 'SourgummyReg'}}>
       <form onSubmit={handleSubmit} className="mb-8 p-6 border rounded-lg bg-white shadow-lg">
-        <h2 className="text-3xl font-serif mb-6 text-center text-stone-800">Konfirmasi Kehadiran</h2>
+        <h2 className="text-3xl mb-6 text-center text-stone-800">Konfirmasi Kehadiran</h2>
         <div className="mb-4">
           <label htmlFor="rsvp-name" className="block mb-2 font-medium">Nama Lengkap:</label>
           <input

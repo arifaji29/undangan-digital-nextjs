@@ -27,7 +27,7 @@ const renderer: CountdownRendererFn = ({
     );
   } else {
     return (
-      <div className="flex justify-center gap-4">
+      <div className="flex justify-center gap-4" style={{ fontFamily: 'SourgummyReg'}}>
         <TimeBox value={days} label="Hari" />
         <TimeBox value={hours} label="Jam" />
         <TimeBox value={minutes} label="Menit" />

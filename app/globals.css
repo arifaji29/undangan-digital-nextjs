@@ -42,32 +42,62 @@ html {
 }
 
 @font-face {
-  font-family: 'Photograph Signature';
+  font-family: 'signature';
   src: url('/fonts/Photograph Signature.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+}
 
-  font-family: 'Kugile';
-  src: url('/fonts/Kugile_Demo.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
 
-  font-family: 'crusignature';
-  src: url('/fonts/Crustaceans-SignatureDEMO-Regular.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-
+@font-face {
   font-family: 'tentangnanti';
   src: url('/fonts/TNanti-Demo.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'SourGummyThin';
+  src: url('/fonts/SourGummy-Thin.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SourGummyLight';
+  src: url('/fonts/SourGummy-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SourGummyReg';
+  src: url('/fonts/SourGummy-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SourGummyMed';
+  src: url('/fonts/SourGummy-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SourGummySem';
+  src: url('/fonts/SourGummy-SemiBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-12px);
   }
@@ -77,11 +107,12 @@ html {
   0% {
     transform: translateY(0px) rotate(0deg);
   }
+
   50% {
     transform: translateY(-10px) rotate(2deg);
   }
+
   100% {
     transform: translateY(0px) rotate(-2deg);
   }
 }
-

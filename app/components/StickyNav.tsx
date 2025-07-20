@@ -47,12 +47,12 @@ export default function StickyNav() {
 
   return (
     <nav
-      className={`fixed bottom-20 left-1/2 -translate-x-1/2 bg-stone-600 text-white shadow-lg rounded-full px-4 py-2 flex gap-3 z-50 transition-all duration-500 backdrop-blur-sm ${
+      className={`fixed bottom-15 left-1/2 -translate-x-1/2 bg-stone-600 text-white text-base shadow-lg rounded-full px-4 py-2 flex gap-3 z-50 transition-all duration-500 backdrop-blur-sm ${
         visible ? 'opacity-100' : 'opacity-0 pointer-events-none'
       } max-w-full overflow-x-auto`}
       role="navigation"
       aria-label="Navigasi bagian halaman"
-    >
+    style={{ fontFamily: 'SourgummyThin'}}>
       {sections.map((section) => (
         <NavItem
           key={section.id}

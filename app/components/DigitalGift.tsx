@@ -32,7 +32,7 @@ export default function DigitalGift() {
   };
 
   return (
-    <section id="gift" data-aos="fade-up" className="relative py-16 px-4 overflow-hidden">
+    <section id="gift" data-aos="fade-up" className="relative py-16 px-4 overflow-hidden" style={{ fontFamily: 'SourgummyReg'}}>
       {/* Background dan overlay */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -47,7 +47,7 @@ export default function DigitalGift() {
 
       {/* Konten utama */}
       <div className="relative z-10 max-w-4xl mx-auto text-center">
-        <h2 className="text-4xl font-serif mb-4 text-stone-800">Wedding Gift</h2>
+        <h2 className="text-4xl mb-4 text-stone-800">Wedding Gift</h2>
         <p className="text-stone-600 mb-10 max-w-2xl mx-auto">
           Doa restu Anda adalah hadiah terindah bagi kami. Namun, jika Anda ingin memberikan tanda kasih, kami dengan senang hati akan menerimanya.
         </p>
@@ -57,7 +57,7 @@ export default function DigitalGift() {
           <div data-aos="fade-up" data-aos-delay="300" className="bg-white p-6 rounded-lg shadow-lg">
             <h3 className="text-xl font-bold mb-3 text-stone-700">Kirim Hadiah</h3>
             <p className="font-semibold">Tono & Tini</p>
-            <p className="text-stone-600">
+            <p className="text-stone-600" style={{ fontFamily: 'SourgummyThin'}}>
               Jl. Karya Budiman Kelurahan Condet No 223 RT 12 RW 06 Kampung Tengah Kramat Jati Jakarta Timur
             </p>
           </div>

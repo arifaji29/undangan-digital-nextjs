@@ -57,7 +57,7 @@ export default function Guestbook() {
 
   // Tampilannya kita bungkus dalam satu section
   return (
-    <section className="max-w-2xl mx-auto p-8">
+    <section className="max-w-2xl mx-auto p-8" style={{ fontFamily: 'SourgummyReg'}}>
       {/* FORM UNTUK MENGIRIM UCAPAN */}
       <form onSubmit={handleSubmit} className="mb-8 p-4 border rounded-lg bg-white shadow-sm">
         <h2 className="text-2xl font-bold mb-4 text-center">Kirim Ucapan & Doa</h2>
