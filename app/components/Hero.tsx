@@ -22,7 +22,7 @@ export default function Hero({ guestName }: { guestName: string }) {
     <section
       id="hero"
       data-aos="fade-up"
-      className="min-h-screen relative flex items-center justify-center text-center text-stone-700 p-4"
+      className="relative h-screen flex items-center justify-center text-center text-stone-700 p-4 overflow-hidden"
     >
       {/* Background */}
       <div className="absolute inset-0 overflow-hidden">

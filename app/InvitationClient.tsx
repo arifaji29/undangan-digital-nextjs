@@ -16,37 +16,57 @@ import Footer from './components/Footer';
 import MusicControls from './components/MusicControls';
 
 export default function InvitationClient({ guestName }: { guestName: string }) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [hasOpened, setHasOpened] = useState(false);
   const audioPlayerRef = useRef<AudioPlayerHandle>(null);
+  const heroRef = useRef<HTMLDivElement>(null);
 
   const handleOpenInvitation = () => {
-    setIsOpen(true);
-    audioPlayerRef.current?.playMusic(); // auto-play setelah dibuka
+    // Play music saat pertama kali buka
+    if (!hasOpened) {
+      setHasOpened(true);
+      audioPlayerRef.current?.playMusic();
+    }
+
+    // Scroll ke Hero
+    scrollToHero();
   };
+
+const scrollToHero = () => {
+  if (heroRef.current) {
+    const y = heroRef.current.offsetTop;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  }
+};
 
   return (
     <>
-      {/* ✅ AudioPlayer hanya dirender sekali */}
+      {/* Musik tetap berjalan di latar belakang */}
       <AudioPlayer ref={audioPlayerRef} />
 
-      {!isOpen ? (
-        <Cover guestName={guestName} onOpen={handleOpenInvitation} />
-      ) : (
-        <>
-          <main className="bg-gray-50 font-sans">
-            <Hero guestName={guestName} />
-            <WeddingCountdown />
-            <EventDetails />
-            <PhotoGallery />
-            <DigitalGift />
-            <RSVPForm />
-            <Guestbook />
-            <Footer />
-          </main>
-          <MusicControls audioRef={audioPlayerRef} />
-          <StickyNav />
-        </>
-      )}
+      <main className="bg-gray-50 font-sans">
+        {/* Cover dengan tombol buka undangan */}
+        <Cover
+          guestName={guestName}
+          hasOpened={hasOpened}
+          onOpen={handleOpenInvitation}
+        />
+
+        {/* Hero Section */}
+        <div ref={heroRef}>
+          <Hero guestName={guestName} />
+        </div>
+
+        <WeddingCountdown />
+        <EventDetails />
+        <PhotoGallery />
+        <DigitalGift />
+        <RSVPForm />
+        <Guestbook />
+        <Footer />
+      </main>
+
+      <MusicControls audioRef={audioPlayerRef} />
+      <StickyNav />
     </>
   );
 }
