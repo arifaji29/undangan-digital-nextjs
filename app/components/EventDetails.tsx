@@ -14,7 +14,7 @@ function formatDate(date: Date): string {
 
 export default function EventDetails() {
   const akadDate = new Date(weddingDate);
-  akadDate.setDate(weddingDate.getDate() - 2);
+  akadDate.setDate(weddingDate.getDate() - 0);
 
   return (
     <section

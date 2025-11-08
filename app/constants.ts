@@ -1,2 +1,2 @@
 // app/constants.ts
-export const weddingDate = new Date('2025-08-31T12:00:00');
+export const weddingDate = new Date('2028-09-12T12:00:00');
